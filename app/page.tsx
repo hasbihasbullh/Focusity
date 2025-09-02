@@ -1,12 +1,15 @@
 import Layouts from "@/common/components/layouts";
-import { FeatureSection } from "@/common/components/sections/home/FeatureSection";
-import HeroSection from "@/common/components/sections/home/HeroSection";
+
+import HeroSection from "@/common/sections/home/HeroSection";
+import { FeatureSection } from "@/common/sections/home/FeatureSection";
+import  { TestimonialSection } from "@/common/sections/home/TestimonialSection"
 
 export default function Home() {
   return (
     <Layouts>
       <HeroSection />
       <FeatureSection />
+      <TestimonialSection/>
     </Layouts>
   );
 }
