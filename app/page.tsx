@@ -1,4 +1,4 @@
-import Layouts from "@/common/components/layouts";
+import Layouts from "@/common/layouts";
 
 import HeroSection from "@/common/sections/home/HeroSection";
 import { FeatureSection } from "@/common/sections/home/FeatureSection";
