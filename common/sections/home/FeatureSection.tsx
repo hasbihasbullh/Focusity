@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { Badge, Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/common/components/ui";
 import { Zap, Timer, ListChecks, ChartNoAxesColumn, NotepadText, Volume2, Palette } from "lucide-react";
 
@@ -95,6 +97,69 @@ export const FeatureSection = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-zinc-100/5 dark:from-zinc-700/5 to-zinc-200/5 dark:to-zinc-600/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Tree Mode Section */}
+      <div className="relative z-10 mt-20">
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-medium text-zinc-900 dark:text-zinc-100 mb-4">Home Mode</h2>
+            <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">With a bold clock, encouraging quote, and personalized greetings that evolve with your day, the Home dashboard syncs with your daily rhythm.</p>
+          </div>
+          <div>
+            <Image
+              className="rounded-3xl shadow-lg w-full h-auto"
+              src="/placeholder.png"
+              alt="Focusity Dashboard Home Mode. A clock with greeting and quote"
+              width={600}
+              height={400}
+              priority
+            />
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="flex flex-col justify-center md:order-last">
+            <h2 className="text-3xl font-medium text-zinc-900 dark:text-zinc-100 mb-4">Focus Mode</h2>
+            <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Unlock laser-sharp concentration with Focus Mode, just a toggle away from Home. Quickly settle into a work session with your unique flow — your customized tasks, timer specs, favorite theme, ambient sounds, and music.
+            </p>
+          </div>
+          <div>
+            <Image
+              className="rounded-3xl shadow-lg w-full h-auto"
+              src="/placeholder.png"
+              alt="Focusity Dashboard Focus Mode. A timer with quote on a pink cloud background"
+              width={600}
+              height={400}
+              priority
+            />
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-medium text-zinc-900 dark:text-zinc-100 mb-4">Ambient Mode</h2>
+            <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Ready for a break? Toggle to Ambient Mode, a serene escape right in your dashboard — your go-to oasis whether you’re relaxing or just looking to spruce up your workspace.
+            </p>
+          </div>
+          <div>
+            <Image
+              className="rounded-3xl shadow-lg w-full h-auto"
+              src="/placeholder.png"
+              alt="Focusity Dashboard in Ambient Mode. Pink tree-lined street background with a small timer in the top right corner"
+              width={600}
+              height={400}
+              priority
+            />
+          </div>
+        </div>
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl font-light text-zinc-900 dark:text-zinc-100 mb-4">Elevate your daily routine</h2>
+          <p className="text-lg sm:text-xl text-zinc-500 dark:text-zinc-400 mb-6">Achieve more in less time.</p>
+          <Link href="/pomodoro" className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-full hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-700 transition-all duration-300">
+            Launch Focusity
+          </Link>
+        </div>
       </div>
     </section>
   );
