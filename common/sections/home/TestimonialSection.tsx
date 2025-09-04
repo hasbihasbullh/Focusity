@@ -1,7 +1,8 @@
 import { Button, Avatar, AvatarFallback } from "@/common/components/ui/";
 import Marquee from "react-fast-marquee";
 import Link from "next/link";
-import React, { ComponentProps } from "react";
+import React from "react";
+import { FaXTwitter } from "react-icons/fa6";
 
 const testimonials = [
   {
@@ -9,7 +10,7 @@ const testimonials = [
     name: "John Doe",
     designation: "Software Engineer",
     company: "TechCorp",
-    testimonial: "This product has completely transformed the way we work. The efficiency and ease of use are unmatched!",
+    testimonial: "Focusity telah meningkatkan produktivitas saya secara signifikan. Pengatur waktu Pomodoro dan daftar tugas terintegrasi setiap hari.",
     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
@@ -17,7 +18,7 @@ const testimonials = [
     name: "Sophia Lee",
     designation: "Data Analyst",
     company: "InsightTech",
-    testimonial: "This tool has saved me hours of work! The analytics and reporting features are incredibly powerful.",
+    testimonial: "Manajemen tugas dan pelacakan waktu Focusity telah menghemat separuh waktu kerja saya. Analitiknya membantu mengoptimalkan alur kerja saya.",
     avatar: "https://randomuser.me/api/portraits/women/6.jpg",
   },
   {
@@ -25,7 +26,7 @@ const testimonials = [
     name: "Michael Johnson",
     designation: "UX Designer",
     company: "DesignPro",
-    testimonial: "An amazing tool that simplifies complex tasks. Highly recommended for professionals in the industry.",
+    testimonial: "Focusity menyederhanakan sprint desain saya. Integrasi daftar tugas dan pengatur waktu membuat proyek kompleks terasa mudah dikelola.",
     avatar: "https://randomuser.me/api/portraits/men/3.jpg",
   },
   {
@@ -33,7 +34,7 @@ const testimonials = [
     name: "Emily Davis",
     designation: "Marketing Specialist",
     company: "BrandBoost",
-    testimonial: "I've seen a significant improvement in our team's productivity since we started using this service.",
+    testimonial: "Sejak menggunakan Focusity, perencanaan kampanye tim kami menjadi lebih efisien. Fitur Pomodoro meningkatkan fokus kami.",
     avatar: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
@@ -41,7 +42,7 @@ const testimonials = [
     name: "Daniel Martinez",
     designation: "Full-Stack Developer",
     company: "CodeCrafters",
-    testimonial: "The best investment we've made! The support team is also super responsive and helpful.",
+    testimonial: "Focusity mengubah cara saya bekerja saat coding. Fitur prioritas tugas dan pengatur waktu menjaga produktivitas saya.",
     avatar: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
@@ -49,7 +50,7 @@ const testimonials = [
     name: "Jane Smith",
     designation: "Product Manager",
     company: "InnovateX",
-    testimonial: "The user experience is top-notch! The interface is clean, intuitive, and easy to navigate.",
+    testimonial: "Antarmuka Focusity yang rapi dan daftar tugasnya membuat pengelolaan roadmap produk menjadi mudah. Pengatur waktu Pomodoro sangat membantu.",
     avatar: "https://randomuser.me/api/portraits/women/2.jpg",
   },
 ];
@@ -90,17 +91,10 @@ const TestimonialList = () =>
         </div>
         <Button variant="ghost" size="icon" asChild>
           <Link href="#" target="_blank">
-            <TwitterLogo className="w-4 h-4" />
+            <FaXTwitter className="w-4 h-4" />
           </Link>
         </Button>
       </div>
       <p className="mt-5 text-[17px]">{testimonial.testimonial}</p>
     </div>
   ));
-
-const TwitterLogo = (props: ComponentProps<"svg">) => (
-  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <title>X</title>
-    <path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
-  </svg>
-);
