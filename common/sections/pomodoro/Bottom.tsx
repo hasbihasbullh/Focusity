@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import { Settings, Expand, Minimize } from "lucide-react";
 import GitHubButton from "./GitHubButton";
 import SettingsPanel from "./SettingsPanel";
-
+import { useBackgroundContext } from "@/hooks/useBackgroundContext";
 
 export default function Bottom() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const { currentBackground, changeBackground } = useBackgroundContext();
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -41,16 +41,22 @@ export default function Bottom() {
         <GitHubButton repoUrl="https://github.com/hasbihasbullh/Focusity" showStars={true} />
       </div>
 
-      {/* Bottom Right - Utility Icons (Center on Mobile) */}
+      {/* Bottom Right - Utility Icons*/}
       <div className="bottom-right flex justify-center sm:justify-end space-x-4 w-full sm:w-auto order-1 sm:order-2">
-        <button onClick={() => setIsSettingsOpen(true)} className="text-gray-600 hover:text-gray-800 transition duration-200 p-1" title="Settings">
+        <button onClick={() => setIsSettingsOpen(true)} className="text-white p-1" title="Settings">
           <Settings className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
-        <button className="text-gray-600 hover:text-gray-800 transition duration-200 p-1" onClick={toggleFullscreen} title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}>
+        <button className="text-white p-1" onClick={toggleFullscreen} title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}>
           {isFullscreen ? <Minimize className="w-5 h-5 sm:w-6 sm:h-6" /> : <Expand className="w-5 h-5 sm:w-6 sm:h-6" />}
         </button>
       </div>
-      <SettingsPanel isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
+      
+      <SettingsPanel 
+        isOpen={isSettingsOpen} 
+        onClose={() => setIsSettingsOpen(false)}
+        currentBackground={currentBackground}
+        onBackgroundChange={changeBackground}
+      />
     </div>
   );
 }

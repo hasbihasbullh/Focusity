@@ -192,21 +192,21 @@ export default function TimerSection() {
           {/* Question Text Area*/}
           <div className="mb-4 sm:mb-6">
             <button onClick={() => setIsTaskModalOpen(true)} className="group w-full cursor-pointer">
-              <div className="flex items-center justify-center gap-2">
-                <h3 className="text-lg sm:text-2xl font-semibold text-zinc-700 group-hover:text-zinc-900 transition duration-200">{selectedTaskText || "What do you want to focus on?"}</h3>
-                <Pencil className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-700 group-hover:text-zinc-900 transition duration-200" strokeWidth={3} />
+              <div className="flex items-center justify-center gap-2 transition duration-200 hover:scale-105">
+                <h3 className="text-lg sm:text-2xl font-semibold text-white">{selectedTaskText || "What do you want to focus on?"}</h3>
+                <Pencil className="w-4 h-4 sm:w-5 sm:h-5 text-white" strokeWidth={3} />
               </div>
             </button>
           </div>
 
           {/* Mode Selection*/}
-          <div className="flex bg-zinc-100 rounded-lg sm:rounded-xl p-1 mb-4 sm:mb-8">
+          <div className="flex rounded-lg sm:rounded-xl gap-1 p-1 mb-4 sm:mb-8">
             {(Object.keys(timerConfig) as Mode[]).map((mode) => (
               <button
                 key={mode}
                 onClick={() => actions.setMode(mode)}
-                className={`flex-1 py-2 sm:py-3 px-2 sm:px-4 text-sm sm:text-base font-semibold rounded-md sm:rounded-lg transition duration-200 ${
-                  currentMode === mode ? "bg-white text-zinc-800 shadow-sm" : "text-zinc-600 hover:text-zinc-800 hover:bg-zinc-200"
+                className={`flex-1 py-2 sm:py-3 px-2 sm:px-4 text-sm sm:text-base font-semibold rounded-md sm:rounded-lg border border-white transition duration-200 ${
+                  currentMode === mode ? "bg-white text-black shadow-sm" : "text-white hover:text-black hover:bg-white hover:border-white"
                 }`}
               >
                 {mode}
@@ -218,8 +218,8 @@ export default function TimerSection() {
           <div className="mb-4 sm:mb-8">
             <div
               className={`
-              font-bold text-zinc-800 leading-none tracking-tighter
-              ${isFullscreen ? "text-[20vh]" : "text-7xl sm:text-8xl md:text-9xl"}
+              font-bold text-white leading-none tracking-tighter
+              ${isFullscreen ? "text-[21vh]" : "text-7xl sm:text-8xl md:text-9xl"}
             `}
             >
               {currentTimer}
@@ -231,7 +231,7 @@ export default function TimerSection() {
             {/* Start/Pause Button */}
             <button
               onClick={() => (isRunning ? actions.pause() : actions.start())}
-              className="w-full sm:flex-1 max-w-xs bg-white border-2 border-zinc-300 text-zinc-700 text-base sm:text-lg font-semibold py-3 sm:py-4 px-6 rounded-xl hover:bg-zinc-50 transition duration-200"
+              className="w-full sm:flex-1 max-w-sm border-2 border-white text-white text-sm sm:text-base font-semibold py-2 sm:py-3 px-4 rounded-lg hover:bg-white hover:text-black transition duration-200"
             >
               {isRunning ? "Pause" : "Start"}
             </button>
@@ -239,12 +239,12 @@ export default function TimerSection() {
             {/* Utility Icons */}
             <div className="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
               {/* Reset Icon */}
-              <button onClick={() => setIsResetModalOpen(true)} className="text-zinc-500 hover:text-zinc-700 transition duration-200 p-2 sm:p-3 rounded-lg hover:bg-zinc-100" title="Reset Timer">
+              <button onClick={() => setIsResetModalOpen(true)} className="text-white p-2 sm:p-3 rounded-lg" title="Reset Timer">
                 <RefreshCcw className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
 
               {/* Miniplayer Icon */}
-              <button className="text-zinc-500 hover:text-zinc-700 transition duration-200 p-2 sm:p-3 rounded-lg hover:bg-zinc-100">
+              <button className="text-white p-2 sm:p-3 rounded-lg">
                 <CgMiniPlayer className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
