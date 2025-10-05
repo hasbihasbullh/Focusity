@@ -98,10 +98,9 @@ export const FeatureSection = () => {
           </CardContent>
         </Card>
       </div>
-
-      {/* Tree Mode Section */}
+      
       <div className="relative z-10 mt-20">
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl font-medium text-zinc-900 dark:text-zinc-100 mb-4">Home Mode</h2>
             <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">With a bold clock, encouraging quote, and personalized greetings that evolve with your day, the Home dashboard syncs with your daily rhythm.</p>
@@ -152,7 +151,7 @@ export const FeatureSection = () => {
               priority
             />
           </div>
-        </div>
+        </div> */}
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-light text-zinc-900 dark:text-zinc-100 mb-4">Elevate your daily routine</h2>
           <p className="text-lg sm:text-xl text-zinc-500 dark:text-zinc-400 mb-6">Achieve more in less time.</p>
